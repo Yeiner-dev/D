@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Nova — Página de inicio</title>
+    <meta name="description" content="Landing de app móvil con captura, beneficios y botones de descarga." />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <a class="brand" href="#inicio" aria-label="Inicio">
+          <span class="brand__mark"></span>
+          <span class="brand__text">App Nova</span>
+        </a>
+
+        <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <ul class="menu">
+            <li><a class="is-active" href="../index-admin.html">Inicio</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#screens">Capturas</a></li>
+            <li><a href="#preguntas">FAQ</a></li>
+            <li><a href="#descarga">Descargar</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button id="themeToggle" class="btn-icon" aria-label="Cambiar tema">◑</button>
+          <button class="btn-icon nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio" class="container layout">
+      <!-- Hero -->
+      <section class="hero card">
+        <div class="hero__copy">
+          <h1>La app que simplifica su día</h1>
+          <p>Organice tareas, reciba recordatorios y colabore con su equipo desde cualquier lugar.</p>
+          <div class="cta">
+            <a class="btn primary" href="#descarga">Descargar</a>
+            <a class="btn" href="#beneficios">Ver beneficios</a>
+          </div>
+          <ul class="checks">
+            <li>✔ Sincronización en la nube</li>
+            <li>✔ Notificaciones inteligentes</li>
+            <li>✔ Sin anuncios</li>
+          </ul>
+          <form id="waitlistForm" class="waitlist" novalidate>
+            <input id="wlEmail" type="email" placeholder="Su correo para novedades" aria-label="Correo" required />
+            <button class="btn" type="submit">Unirse</button>
+            <small class="help"></small>
+          </form>
+        </div>
+        <div class="hero__media phone">
+          <img src="https://picsum.photos/seed/app-hero/720/1440" alt="Captura principal de la app en un teléfono" loading="eager" />
+        </div>
+      </section>
+
+      <!-- Beneficios -->
+      <section id="beneficios" class="features">
+        <header class="section-header">
+          <h2>Beneficios clave</h2>
+          <p class="muted">Productividad, colaboración y control en un solo lugar.</p>
+        </header>
+        <div class="grid-features">
+          <article class="card feature">
+            <h3>Listas inteligentes</h3>
+            <p>Organice por prioridades, etiquetas y fechas límite.</p>
+          </article>
+          <article class="card feature">
+            <h3>Colaboración</h3>
+            <p>Comparta tareas y comente en tiempo real.</p>
+          </article>
+          <article class="card feature">
+            <h3>Recordatorios</h3>
+            <p>Alertas contextuales según ubicación y hora.</p>
+          </article>
+          <article class="card feature">
+            <h3>Modo offline</h3>
+            <p>Trabaje sin conexión y sincronice luego.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Capturas (slider) -->
+      <section id="screens" class="screens card">
+        <header class="section-header">
+          <h2>Capturas</h2>
+          <p class="muted">Una vista rápida de la experiencia.</p>
+        </header>
+        <div class="slider" aria-roledescription="carousel" aria-label="Capturas de la app">
+          <div class="slides">
+            <figure class="slide is-active">
+              <img src="https://picsum.photos/seed/scr1/960/540" alt="Pantalla de tablero" loading="lazy" />
+              <figcaption>Tablero principal</figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="https://picsum.photos/seed/scr2/960/540" alt="Pantalla de tareas" loading="lazy" />
+              <figcaption>Gestión de tareas</figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="https://picsum.photos/seed/scr3/960/540" alt="Pantalla de calendario" loading="lazy" />
+              <figcaption>Calendario</figcaption>
+            </figure>
+          </div>
+          <div class="slider-controls">
+            <button class="btn-icon" data-dir="prev" aria-label="Anterior">←</button>
+            <button class="btn-icon" data-dir="next" aria-label="Siguiente">→</button>
+          </div>
+          <div class="dots" role="tablist" aria-label="Paginación de capturas">
+            <button class="dot is-active" role="tab" aria-selected="true" aria-controls="scr-1">•</button>
+            <button class="dot" role="tab" aria-selected="false" aria-controls="scr-2">•</button>
+            <button class="dot" role="tab" aria-selected="false" aria-controls="scr-3">•</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="preguntas" class="faq">
+        <header class="section-header">
+          <h2>Preguntas frecuentes</h2>
+          <p class="muted">Respuestas rápidas sobre la app.</p>
+        </header>
+        <details class="card">
+          <summary>¿La app es gratuita?</summary>
+          <p>Ofrecemos un plan gratuito con funciones esenciales y planes Pro para equipos.</p>
+        </details>
+        <details class="card">
+          <summary>¿Funciona sin conexión?</summary>
+          <p>Sí, puede trabajar offline y la app sincroniza cuando retoma conexión.</p>
+        </details>
+        <details class="card">
+          <summary>¿En qué plataformas está disponible?</summary>
+          <p>iOS y Android.</p>
+        </details>
+      </section>
+
+      <!-- Descarga -->
+      <section id="descarga" class="download card">
+        <header class="section-header">
+          <h2>Descargue la app</h2>
+          <p class="muted">Disponible para iOS y Android.</p>
+        </header>
+        <div class="store-buttons">
+          <a class="store ios" href="#" data-platform="iOS" aria-label="Descargar en App Store"> App Store</a>
+          <a class="store android" href="#" data-platform="Android" aria-label="Descargar en Google Play">▶ Google Play</a>
+        </div>
+        <small class="muted">Las descargas son ficticias para esta maqueta.</small>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <nav aria-label="Enlaces de pie de página">
+          <ul class="footer-menu">
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+        <p>&copy; <span id="year"></span> Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <button id="toTop" class="to-top" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>

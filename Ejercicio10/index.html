@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscripción — Conferencia Nova</title>
+    <meta name="description" content="Formulario de inscripción a evento con validación y cálculo de total." />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <a class="brand" href="../index-admin.html" aria-label="Inicio">
+          <span class="brand__mark"></span>
+          <span class="brand__text">Conferencia Nova</span>
+        </a>
+
+        <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <ul class="menu">
+            <li><a class="is-active" href="../index-admin.html">Inicio</a></li>
+            <li><a href="#inscripcion">Inscripción</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button id="themeToggle" class="btn-icon" aria-label="Cambiar tema">◑</button>
+          <button class="btn-icon nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio" class="container layout">
+      <!-- Hero -->
+      <section class="hero card">
+        <div class="hero__copy">
+          <h1>Formulario de inscripción</h1>
+          <p>Participe en la <strong>Conferencia Nova 2025</strong>. Complete sus datos y elija su pase.</p>
+          <ul class="checks">
+            <li>✔ Pase General, Estudiante o VIP</li>
+            <li>✔ Talleres prácticos opcionales</li>
+            <li>✔ Certificado de participación</li>
+          </ul>
+          <a class="btn primary" href="#inscripcion">Inscribirse ahora</a>
+        </div>
+        <div class="hero__media">
+          <img src="https://picsum.photos/seed/event-hero/960/560" alt="Auditorio del evento" loading="eager" />
+        </div>
+      </section>
+
+      <!-- Formulario -->
+      <section id="inscripcion" class="card form-section">
+        <header class="section-header">
+          <h2>Datos de inscripción</h2>
+          <p class="muted">Los campos marcados con * son obligatorios.</p>
+        </header>
+
+        <form id="regForm" class="form" novalidate>
+          <!-- Datos personales -->
+          <fieldset class="card subtle">
+            <legend>Datos personales</legend>
+            <div class="grid-form">
+              <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Ej. Ana María López" required />
+                <small class="help"></small>
+              </div>
+              <div class="form-group">
+                <label for="correo">Correo electrónico *</label>
+                <input id="correo" name="correo" type="email" placeholder="correo@ejemplo.com" required />
+                <small class="help"></small>
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" name="telefono" type="tel" placeholder="+502 5555 5555" />
+                <small class="help"></small>
+              </div>
+              <div class="form-group">
+                <label for="pais">País *</label>
+                <select id="pais" name="pais" required>
+                  <option value="">Seleccione…</option>
+                  <option>Guatemala</option>
+                  <option>El Salvador</option>
+                  <option>Honduras</option>
+                  <option>Costa Rica</option>
+                  <option>Panamá</option>
+                  <option>México</option>
+                  <option>Otro</option>
+                </select>
+                <small class="help"></small>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Pase y talleres -->
+          <fieldset class="card subtle">
+            <legend>Pase y talleres</legend>
+            <div class="grid-form">
+              <div class="form-group">
+                <label for="pase">Tipo de pase *</label>
+                <select id="pase" name="pase" required>
+                  <option value="">Seleccione…</option>
+                  <option value="general" data-precio="120">General — $120</option>
+                  <option value="estudiante" data-precio="60">Estudiante — $60</option>
+                  <option value="vip" data-precio="250">VIP — $250</option>
+                </select>
+                <small class="help"></small>
+              </div>
+              <div class="form-group">
+                <label>Asistencia *</label>
+                <div class="check-grid">
+                  <label><input type="checkbox" name="dias" value="dia1" /> Día 1</label>
+                  <label><input type="checkbox" name="dias" value="dia2" /> Día 2</label>
+                  <label><input type="checkbox" name="dias" value="dia3" /> Día 3</label>
+                </div>
+                <small class="help"></small>
+              </div>
+              <div class="form-group">
+                <label>Talleres opcionales</label>
+                <div class="check-grid">
+                  <label><input class="chk-taller" type="checkbox" data-precio="25" value="t1" /> Diseño de experiencias ($25)</label>
+                  <label><input class="chk-taller" type="checkbox" data-precio="35" value="t2" /> IA aplicada a negocios ($35)</label>
+                  <label><input class="chk-taller" type="checkbox" data-precio="20" value="t3" /> Herramientas no-code ($20)</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Método de pago *</label>
+                <div class="radio-grid">
+                  <label><input type="radio" name="pago" value="tarjeta" required /> Tarjeta</label>
+                  <label><input type="radio" name="pago" value="transferencia" /> Transferencia</label>
+                  <label><input type="radio" name="pago" value="paypal" /> PayPal</label>
+                </div>
+                <small class="help"></small>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Resumen -->
+          <div class="resumen card subtle">
+            <div class="res-row">
+              <span>Total estimado:</span>
+              <strong id="total">$0</strong>
+            </div>
+            <small class="muted">El cálculo es orientativo. La confirmación es simulada.</small>
+          </div>
+
+          <!-- Términos -->
+          <div class="terms">
+            <label><input id="acepto" type="checkbox" required /> Acepto términos y políticas *</label>
+            <small class="help"></small>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn primary">Enviar inscripción</button>
+            <button type="reset" class="btn">Limpiar</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="faq">
+        <header class="section-header">
+          <h2>Preguntas frecuentes</h2>
+        </header>
+        <details class="card">
+          <summary>¿El pase de estudiante requiere credencial?</summary>
+          <p>Sí, se solicitará constancia o carné vigente durante el registro.</p>
+        </details>
+        <details class="card">
+          <summary>¿Puedo cambiar de taller luego?</summary>
+          <p>Puede solicitar cambios por correo hasta 72 horas antes del evento.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <nav aria-label="Enlaces de pie de página">
+          <ul class="footer-menu">
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+        <p>&copy; <span id="year"></span> Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <button id="toTop" class="to-top" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>

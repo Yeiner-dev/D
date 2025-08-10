@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universidad Nova — Sitio Institucional</title>
+    <meta name="description" content="Sitio institucional de universidad con oferta académica, eventos y noticias." />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <a class="brand" href="#" aria-label="Inicio">
+          <span class="brand__mark"></span>
+          <span class="brand__text">Universidad Nova</span>
+        </a>
+
+        <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <ul class="menu">
+            <li><a class="is-active" href="../index-admin.html">Inicio</a></li>
+            <li><a href="#oferta">Oferta Académica</a></li>
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#noticias">Noticias</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button id="themeToggle" class="btn-icon" aria-label="Cambiar tema">◑</button>
+          <button class="btn-icon nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio" class="container layout">
+      <!-- Hero -->
+      <section class="hero card">
+        <div class="hero__copy">
+          <h1>Formando líderes con impacto</h1>
+          <p>Programas de pregrado y posgrado con enfoque en innovación, investigación y servicio.</p>
+          <div class="cta">
+            <a class="btn primary" href="#oferta">Conoce la oferta</a>
+            <a class="btn" href="#contacto">Solicita información</a>
+          </div>
+          <ul class="stats">
+            <li><strong>50+</strong> programas</li>
+            <li><strong>120</strong> docentes</li>
+            <li><strong>20k</strong> egresados</li>
+          </ul>
+        </div>
+        <div class="hero__media">
+          <img src="https://picsum.photos/seed/campus/960/560" alt="Campus universitario" loading="eager" />
+        </div>
+      </section>
+
+      <!-- Oferta Académica -->
+      <section id="oferta" class="oferta">
+        <header class="section-header">
+          <h2>Oferta Académica</h2>
+          <div class="filters">
+            <label for="nivel">Nivel:</label>
+            <select id="nivel">
+              <option value="all">Todos</option>
+              <option value="pregrado">Pregrado</option>
+              <option value="posgrado">Posgrado</option>
+              <option value="virtual">Virtual</option>
+            </select>
+            <input id="q" type="search" placeholder="Buscar programa..." aria-label="Buscar programa" />
+          </div>
+        </header>
+
+        <section class="grid-programas" aria-label="Lista de programas">
+          <article class="programa card" data-nivel="pregrado" data-name="Ingeniería en Sistemas">
+            <h3>Ingeniería en Sistemas</h3>
+            <p class="muted">Pregrado · Duración: 10 semestres</p>
+            <a class="btn" href="#" aria-label="Ver Ingeniería en Sistemas">Ver plan de estudios</a>
+          </article>
+
+          <article class="programa card" data-nivel="pregrado" data-name="Administración de Empresas">
+            <h3>Administración de Empresas</h3>
+            <p class="muted">Pregrado · Duración: 10 semestres</p>
+            <a class="btn" href="#" aria-label="Ver Administración de Empresas">Ver plan de estudios</a>
+          </article>
+
+          <article class="programa card" data-nivel="posgrado" data-name="Maestría en Finanzas">
+            <h3>Maestría en Finanzas</h3>
+            <p class="muted">Posgrado · Duración: 4 semestres</p>
+            <a class="btn" href="#" aria-label="Ver Maestría en Finanzas">Ver plan de estudios</a>
+          </article>
+
+          <article class="programa card" data-nivel="posgrado" data-name="MBA — Dirección y Estrategia">
+            <h3>MBA — Dirección y Estrategia</h3>
+            <p class="muted">Posgrado · Duración: 4 semestres</p>
+            <a class="btn" href="#" aria-label="Ver MBA">Ver plan de estudios</a>
+          </article>
+
+          <article class="programa card" data-nivel="virtual" data-name="Licenciatura en Marketing Digital">
+            <h3>Licenciatura en Marketing Digital</h3>
+            <p class="muted">Virtual · Duración: 10 semestres</p>
+            <a class="btn" href="#" aria-label="Ver Marketing Digital">Ver plan de estudios</a>
+          </article>
+
+          <article class="programa card" data-nivel="virtual" data-name="Diplomado en Ciencia de Datos">
+            <h3>Diplomado en Ciencia de Datos</h3>
+            <p class="muted">Virtual · Duración: 6 meses</p>
+            <a class="btn" href="#" aria-label="Ver Diplomado en Ciencia de Datos">Ver plan de estudios</a>
+          </article>
+        </section>
+      </section>
+
+      <!-- Noticias -->
+      <section id="noticias" class="noticias">
+        <header class="section-header">
+          <h2>Noticias</h2>
+          <p class="muted">Actualidad institucional.</p>
+        </header>
+        <section class="grid-news" aria-label="Noticias institucionales">
+          <article class="news card">
+            <h3>Convocatoria de Becas 2026</h3>
+            <p class="muted">Publicada el <time datetime="2025-07-28">28/07/2025</time></p>
+            <p>Se abre el programa de becas para excelencia académica y liderazgo estudiantil.</p>
+            <a class="link" href="#">Leer más →</a>
+          </article>
+          <article class="news card">
+            <h3>Laboratorio de IA inaugura nuevos equipos</h3>
+            <p class="muted">Publicada el <time datetime="2025-06-15">15/06/2025</time></p>
+            <p>La facultad de ingeniería presentó recursos para investigación aplicada en datos.</p>
+            <a class="link" href="#">Leer más →</a>
+          </article>
+          <article class="news card">
+            <h3>Semana de la Investigación</h3>
+            <p class="muted">Publicada el <time datetime="2025-05-02">02/05/2025</time></p>
+            <p>Conferencias y posters científicos abiertos a la comunidad universitaria.</p>
+            <a class="link" href="#">Leer más →</a>
+          </article>
+        </section>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <nav aria-label="Enlaces de pie de página">
+          <ul class="footer-menu">
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Mapa del sitio</a></li>
+          </ul>
+        </nav>
+        <p>&copy; <span id="year"></span> Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <button id="toTop" class="to-top" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>

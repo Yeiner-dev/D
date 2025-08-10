@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Producto X — Landing Page</title>
+    <meta name="description" content="Landing page de producto con imagen principal, CTA y formulario de contacto." />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <a class="brand" href="#" aria-label="Inicio">
+          <span class="brand__mark"></span>
+          <span class="brand__text">Producto X</span>
+        </a>
+
+        <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <ul class="menu">
+            <li><a class="is-active" href="../index-admin.html">Inicio</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#opiniones">Opiniones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button id="themeToggle" class="btn-icon" aria-label="Cambiar tema">◑</button>
+          <button class="btn-icon nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio" class="container">
+      <!-- Hero -->
+      <section class="hero card">
+        <div class="hero__copy">
+          <h1>Acelere su flujo de trabajo con <em>Producto X</em></h1>
+          <p>Una solución simple, rápida y segura para equipos que necesitan resultados hoy.</p>
+          <div class="cta">
+            <a class="btn primary" href="#contacto">Probar ahora</a>
+            <a class="btn" href="#beneficios">Ver beneficios</a>
+          </div>
+          <ul class="checks">
+            <li>✔ Implementación en minutos</li>
+            <li>✔ Sin contratos ni letra pequeña</li>
+            <li>✔ Soporte por correo</li>
+          </ul>
+        </div>
+        <div class="hero__media">
+          <img src="https://picsum.photos/seed/landing-hero/960/640" alt="Imagen principal del producto" loading="eager" />
+        </div>
+      </section>
+
+      <!-- Beneficios / Características -->
+      <section id="beneficios" class="features">
+        <header class="section-header">
+          <h2>Beneficios clave</h2>
+          <p class="muted">Todo lo necesario para empezar y escalar sin fricción.</p>
+        </header>
+        <div class="grid-features">
+          <article class="card feature">
+            <h3>Rápido</h3>
+            <p>Optimizado para rendimiento: menos esperas, más resultados.</p>
+          </article>
+          <article class="card feature">
+            <h3>Seguro</h3>
+            <p>Cifrado en tránsito y buenas prácticas de privacidad.</p>
+          </article>
+          <article class="card feature">
+            <h3>Intuitivo</h3>
+            <p>Interfaz clara con curva de aprendizaje mínima.</p>
+          </article>
+          <article class="card feature">
+            <h3>Escalable</h3>
+            <p>Adáptese a más usuarios y datos sin complicaciones.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Opiniones / Slider sencillo -->
+      <section id="opiniones" class="testimonials card">
+        <header class="section-header">
+          <h2>Opiniones</h2>
+          <p class="muted">Lo que dicen nuestros clientes.</p>
+        </header>
+        <div class="slider" aria-roledescription="carousel" aria-label="Opiniones" tabindex="0">
+          <div class="slides">
+            <figure class="slide is-active">
+              <blockquote>“Producto X nos ahorró horas a la semana. Simple y efectivo.”</blockquote>
+              <figcaption>— Ana M., Project Manager</figcaption>
+            </figure>
+            <figure class="slide">
+              <blockquote>“La implementación fue inmediata. El equipo se adaptó en un día.”</blockquote>
+              <figcaption>— Carlos R., CTO</figcaption>
+            </figure>
+            <figure class="slide">
+              <blockquote>“Excelente soporte y una interfaz muy clara. Recomendado.”</blockquote>
+              <figcaption>— Laura P., Emprendedora</figcaption>
+            </figure>
+          </div>
+          <div class="slider-controls">
+            <button class="btn-icon" data-dir="prev" aria-label="Anterior">←</button>
+            <button class="btn-icon" data-dir="next" aria-label="Siguiente">→</button>
+          </div>
+          <div class="dots" role="tablist" aria-label="Paginación de opiniones">
+            <button class="dot is-active" role="tab" aria-selected="true" aria-controls="slide-1">•</button>
+            <button class="dot" role="tab" aria-selected="false" aria-controls="slide-2">•</button>
+            <button class="dot" role="tab" aria-selected="false" aria-controls="slide-3">•</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formulario de contacto -->
+      <section id="contacto" class="contact card">
+        <header class="section-header">
+          <h2>Contáctenos</h2>
+          <p class="muted">Solicite una demo o haga una consulta. Responderemos en breve.</p>
+        </header>
+        <form id="contactForm" class="form" novalidate>
+          <div class="grid-form">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" placeholder="Su nombre completo" required />
+              <small class="help"></small>
+            </div>
+            <div class="form-group">
+              <label for="email">Correo</label>
+              <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" required />
+              <small class="help"></small>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="4" placeholder="Cuéntenos su necesidad" required></textarea>
+            <small class="help"></small>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn primary">Enviar</button>
+            <button type="reset" class="btn">Limpiar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <nav aria-label="Enlaces de pie de página">
+          <ul class="footer-menu">
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+        <p>&copy; <span id="year"></span> Producto X — Maqueta de demostración.</p>
+      </div>
+    </footer>
+
+    <button id="toTop" class="to-top" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>

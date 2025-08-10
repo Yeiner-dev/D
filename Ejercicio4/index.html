@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio — Diseñador Gráfico</title>
+    <meta name="description" content="Portafolio de diseñador gráfico con galería filtrable, información personal y enlaces a redes sociales." />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <a class="brand" href="#inicio" aria-label="Inicio">
+          <span class="brand__mark"></span>
+          <span class="brand__text">DG · Portafolio</span>
+        </a>
+
+        <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <ul class="menu">
+            <li><a class="is-active" href="../index-admin.html">Inicio</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button id="themeToggle" class="btn-icon" aria-label="Cambiar tema">◑</button>
+          <button class="btn-icon nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio" class="container layout">
+      <!-- Hero -->
+      <section class="hero card">
+        <div class="hero__copy">
+          <h1>Hola, soy <em>Alex Rivera</em>, diseñador gráfico</h1>
+          <p>Creo identidades visuales, piezas editoriales y contenido digital con enfoque en claridad y estética.</p>
+          <div class="cta">
+            <a class="btn primary" href="#proyectos">Ver trabajos</a>
+            <a class="btn" href="#contacto">Cotizar proyecto</a>
+          </div>
+          <ul class="list-inline">
+            <li><a class="link" href="#" aria-label="Behance">Behance</a></li>
+            <li><a class="link" href="#" aria-label="Dribbble">Dribbble</a></li>
+            <li><a class="link" href="#" aria-label="Instagram">Instagram</a></li>
+            <li><a class="link" href="#" aria-label="LinkedIn">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="hero__media">
+          <img src="https://picsum.photos/seed/portrait/560/560" alt="Retrato del diseñador" loading="eager" />
+        </div>
+      </section>
+
+      <!-- Galería de proyectos -->
+      <section id="proyectos" class="gallery-section">
+        <header class="section-header">
+          <h2>Proyectos destacados</h2>
+          <div class="filters">
+            <button class="chip is-active" data-filter="all">Todos</button>
+            <button class="chip" data-filter="branding">Branding</button>
+            <button class="chip" data-filter="editorial">Editorial</button>
+            <button class="chip" data-filter="ilustracion">Ilustración</button>
+            <button class="chip" data-filter="uiux">UI/UX</button>
+          </div>
+        </header>
+
+        <section class="grid-projects" aria-label="Galería de proyectos">
+          <!-- 8 proyectos de ejemplo -->
+          <article class="project card" data-cat="branding">
+            <img src="https://picsum.photos/seed/pf1/600/420" alt="Proyecto de branding 1" loading="lazy" />
+            <div class="project__meta">
+              <h3>Marca Café A.</h3>
+              <p class="muted">Branding</p>
+            </div>
+            <button class="btn ghost view" data-title="Marca Café A." data-img="https://picsum.photos/seed/pf1/1200/800">Ver</button>
+          </article>
+
+          <article class="project card" data-cat="editorial">
+            <img src="https://picsum.photos/seed/pf2/600/420" alt="Proyecto editorial 1" loading="lazy" />
+            <div class="project__meta">
+              <h3>Revista Minimal</h3>
+              <p class="muted">Editorial</p>
+            </div>
+            <button class="btn ghost view" data-title="Revista Minimal" data-img="https://picsum.photos/seed/pf2/1200/800">Ver</button>
+          </article>
+
+          <article class="project card" data-cat="ilustracion">
+            <img src="https://picsum.photos/seed/pf3/600/420" alt="Proyecto de ilustración 1" loading="lazy" />
+            <div class="project__meta">
+              <h3>Serie Flora</h3>
+              <p class="muted">Ilustración</p>
+            </div>
+            <button class="btn ghost view" data-title="Serie Flora" data-img="https://picsum.photos/seed/pf3/1200/800">Ver</button>
+          </article>
+
+          <article class="project card" data-cat="uiux">
+            <img src="https://picsum.photos/seed/pf4/600/420" alt="Proyecto UI/UX 1" loading="lazy" />
+            <div class="project__meta">
+              <h3>App Finance</h3>
+              <p class="muted">UI/UX</p>
+            </div>
+            <button class="btn ghost view" data-title="App Finance" data-img="https://picsum.photos/seed/pf4/1200/800">Ver</button>
+          </article>
+
+          <article class="project card" data-cat="branding">
+            <img src="https://picsum.photos/seed/pf5/600/420" alt="Proyecto de branding 2" loading="lazy" />
+            <div class="project__meta">
+              <h3>Identidad Boreal</h3>
+              <p class="muted">Branding</p>
+            </div>
+            <button class="btn ghost view" data-title="Identidad Boreal" data-img="https://picsum.photos/seed/pf5/1200/800">Ver</button>
+          </article>
+
+          <article class="project card" data-cat="editorial">
+            <img src="https://picsum.photos/seed/pf6/600/420" alt="Proyecto editorial 2" loading="lazy" />
+            <div class="project__meta">
+              <h3>Catálogo Arte 2025</h3>
+              <p class="muted">Editorial</p>
+            </div>
+            <button class="btn ghost view" data-title="Catálogo Arte 2025" data-img="https://picsum.photos/seed/pf6/1200/800">Ver</button>
+          </article>
+
+          <article class="project card" data-cat="ilustracion">
+            <img src="https://picsum.photos/seed/pf7/600/420" alt="Proyecto de ilustración 2" loading="lazy" />
+            <div class="project__meta">
+              <h3>Aves del Trópico</h3>
+              <p class="muted">Ilustración</p>
+            </div>
+            <button class="btn ghost view" data-title="Aves del Trópico" data-img="https://picsum.photos/seed/pf7/1200/800">Ver</button>
+          </article>
+
+          <article class="project card" data-cat="uiux">
+            <img src="https://picsum.photos/seed/pf8/600/420" alt="Proyecto UI/UX 2" loading="lazy" />
+            <div class="project__meta">
+              <h3>Dashboard Analytics</h3>
+              <p class="muted">UI/UX</p>
+            </div>
+            <button class="btn ghost view" data-title="Dashboard Analytics" data-img="https://picsum.photos/seed/pf8/1200/800">Ver</button>
+          </article>
+        </section>
+      </section>
+
+      <!-- Sobre mí -->
+      <section id="sobre-mi" class="about card">
+        <header class="section-header">
+          <h2>Sobre mí</h2>
+          <p class="muted">Más de 7 años diseñando marcas, libros y experiencias digitales.</p>
+        </header>
+        <div class="about-grid">
+          <article>
+            <h3>Perfil</h3>
+            <p>Soy diseñador centrado en sistemas visuales consistentes y tipografía funcional. Me gusta colaborar con equipos de producto y editoriales.</p>
+            <ul class="list">
+              <li>Identidad de marca</li>
+              <li>Dirección de arte</li>
+              <li>Diagramación editorial</li>
+              <li>UI para productos digitales</li>
+            </ul>
+          </article>
+          <aside>
+            <h3>Contacto rápido</h3>
+            <form id="contactForm" class="form" novalidate>
+              <label for="email">Correo</label>
+              <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" required />
+              <small class="help"></small>
+              <button type="submit" class="btn primary">Escríbeme</button>
+            </form>
+            <div class="socials">
+              <a class="chip" href="#" aria-label="Behance">Behance</a>
+              <a class="chip" href="#" aria-label="Dribbble">Dribbble</a>
+              <a class="chip" href="#" aria-label="Instagram">Instagram</a>
+              <a class="chip" href="#" aria-label="LinkedIn">LinkedIn</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section id="contacto" class="contact card">
+        <header class="section-header">
+          <h2>Trabajemos juntos</h2>
+          <p class="muted">Comparta detalles de su proyecto y le responderé pronto.</p>
+        </header>
+        <form id="projectForm" class="form" novalidate>
+          <div class="grid-form">
+            <div>
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" placeholder="Su nombre" required />
+              <small class="help"></small>
+            </div>
+            <div>
+              <label for="email2">Correo</label>
+              <input id="email2" name="email2" type="email" placeholder="correo@ejemplo.com" required />
+              <small class="help"></small>
+            </div>
+          </div>
+          <div>
+            <label for="message">Proyecto</label>
+            <textarea id="message" name="message" rows="4" placeholder="Describa su proyecto" required></textarea>
+            <small class="help"></small>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn primary">Enviar</button>
+            <button type="reset" class="btn">Limpiar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <nav aria-label="Enlaces de pie de página">
+          <ul class="footer-menu">
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+        <p>&copy; <span id="year"></span> Portafolio — Maqueta de demostración.</p>
+      </div>
+    </footer>
+
+    <!-- Modal simple para ver proyecto -->
+    <dialog id="lightbox" class="lightbox">
+      <div class="lightbox__content">
+        <img id="lightboxImg" src="" alt="" />
+        <div class="lightbox__footer">
+          <span id="lightboxTitle"></span>
+          <button id="lightboxClose" class="btn-icon" aria-label="Cerrar">✕</button>
+        </div>
+      </div>
+    </dialog>
+
+    <button id="toTop" class="to-top" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>

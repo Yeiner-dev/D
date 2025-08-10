@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Blog Personal</title>
+    <meta name="description" content="Maqueta funcional de blog personal con HTML5, CSS3 y JavaScript." />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <a class="brand" href="#" aria-label="Ir al inicio">
+          <span class="brand__logo">✒️</span>
+          <span class="brand__text">Mi Blog</span>
+        </a>
+
+        <button class="btn-icon nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+          ☰
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <ul class="menu">
+            <li><a href="../index-admin.html" class="is-active">Inicio</a></li>
+            <li><a href="#articulos">Artículos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <button id="themeToggle" class="btn-icon" aria-label="Cambiar tema">🌓</button>
+      </div>
+    </header>
+
+    <main class="container layout">
+      <section class="intro card">
+        <h1>Bienvenido a mi blog personal</h1>
+        <p>Espacio para compartir ideas, experiencias y recursos sobre desarrollo y tecnología.</p>
+        <a href="#articulos" class="btn">Ver artículos</a>
+      </section>
+
+      <section id="articulos" class="posts">
+        <div class="posts__header">
+          <h2>Artículos recientes</h2>
+          <input id="searchInput" type="search" placeholder="Buscar artículos..." aria-label="Buscar artículos" />
+        </div>
+
+        <article class="post card" data-category="javascript">
+          <header class="post__header">
+            <h3 class="post__title"><a href="#">10 trucos de JavaScript para tu día a día</a></h3>
+            <p class="post__meta">Publicado el <time datetime="2025-08-01">01/08/2025</time> · Categoría: JavaScript</p>
+          </header>
+          <p class="post__excerpt">Colección de fragmentos y patrones simples que aceleran tareas comunes.</p>
+          <footer class="post__footer">
+            <span class="tag">JavaScript</span>
+          </footer>
+        </article>
+
+        <article class="post card" data-category="css">
+          <header class="post__header">
+            <h3 class="post__title"><a href="#">Diseño responsivo con Grid moderno</a></h3>
+            <p class="post__meta">Publicado el <time datetime="2025-07-20">20/07/2025</time> · Categoría: CSS</p>
+          </header>
+          <p class="post__excerpt">Cómo estructurar layouts robustos con pocas líneas usando CSS Grid.</p>
+          <footer class="post__footer">
+            <span class="tag">CSS</span>
+          </footer>
+        </article>
+
+        <article class="post card" data-category="html">
+          <header class="post__header">
+            <h3 class="post__title"><a href="#">HTML semántico: una guía breve</a></h3>
+            <p class="post__meta">Publicado el <time datetime="2025-06-30">30/06/2025</time> · Categoría: HTML</p>
+          </header>
+          <p class="post__excerpt">Buenas prácticas para que tu contenido sea accesible, claro y mantenible.</p>
+          <footer class="post__footer">
+            <span class="tag">HTML</span>
+          </footer>
+        </article>
+
+        <article class="post card" data-category="javascript">
+          <header class="post__header">
+            <h3 class="post__title"><a href="#">Fetch y async/await sin dolor</a></h3>
+            <p class="post__meta">Publicado el <time datetime="2025-05-10">10/05/2025</time> · Categoría: JavaScript</p>
+          </header>
+          <p class="post__excerpt">Patrones prácticos para consumir APIs con control de errores.</p>
+          <footer class="post__footer">
+            <span class="tag">JavaScript</span>
+          </footer>
+        </article>
+      </section>
+
+      <aside class="sidebar">
+        <section class="card">
+          <h2>Categorías</h2>
+          <ul id="categoryList" class="categories">
+            <li><button class="chip is-active" data-filter="all">Todas</button></li>
+            <li><button class="chip" data-filter="javascript">JavaScript</button></li>
+            <li><button class="chip" data-filter="css">CSS</button></li>
+            <li><button class="chip" data-filter="html">HTML</button></li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Suscríbete</h2>
+          <p>Recibe novedades por correo.</p>
+          <form id="subscribeForm" novalidate>
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required />
+            <button type="submit" class="btn">Suscribirme</button>
+            <small id="emailHelp" class="help"></small>
+          </form>
+        </section>
+
+        <section class="card" id="contacto">
+          <h2>Contacto</h2>
+          <ul class="list-links">
+            <li><a href="#" class="link">LinkedIn</a></li>
+            <li><a href="#" class="link">GitHub</a></li>
+            <li><a href="mailto:contacto@mi-blog.com" class="link">Email</a></li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <nav aria-label="Enlaces de pie de página">
+          <ul class="footer-menu">
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Accesibilidad</a></li>
+          </ul>
+        </nav>
+        <p>&copy; <span id="year"></span> Mi Blog. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <button id="toTop" class="to-top" aria-label="Volver arriba">↑</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>

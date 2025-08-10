@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechWire — Noticias Tecnológicas</title>
+    <meta name="description" content="Muro de publicaciones tech con filtros por categoría y lectura ampliada." />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <a class="brand" href="#" aria-label="Inicio">
+          <span class="brand__mark"></span>
+          <span class="brand__text">TechWire</span>
+        </a>
+
+        <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <ul class="menu">
+            <li><a class="is-active" href="../index-admin.html">Inicio</a></li>
+            <li><a href="#muro">Publicaciones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <form id="searchForm" class="search" role="search" novalidate>
+            <input id="searchInput" type="search" placeholder="Buscar noticias..." aria-label="Buscar" />
+            <button class="btn" type="submit">Buscar</button>
+          </form>
+          <button id="themeToggle" class="btn-icon" aria-label="Cambiar tema">◑</button>
+          <button class="btn-icon nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio" class="container layout">
+      <!-- Destacado -->
+      <section class="destacado card">
+        <article class="dest-post">
+          <div class="dest-media">
+            <img src="https://picsum.photos/seed/tech-hero/1200/600" alt="Imagen destacada" loading="eager" />
+          </div>
+          <div class="dest-copy">
+            <h1>Reporte: chips de próxima generación impulsan la IA en el borde</h1>
+            <p class="muted">Un vistazo a las arquitecturas que prometen llevar inferencia avanzada a dispositivos locales.</p>
+            <div class="meta">Por <strong>Redacción</strong> · <time datetime="2025-08-01">1 ago 2025</time> · <span class="badge">IA</span></div>
+            <div class="cta">
+              <a href="#" class="btn read" data-id="p1">Leer ahora</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Filtros -->
+      <section class="filtros card">
+        <div class="filters">
+          <button class="chip is-active" data-filter="all">Todo</button>
+          <button class="chip" data-filter="ia">IA</button>
+          <button class="chip" data-filter="hardware">Hardware</button>
+          <button class="chip" data-filter="software">Software</button>
+          <button class="chip" data-filter="seguridad">Seguridad</button>
+          <button class="chip" data-filter="negocios">Negocios</button>
+        </div>
+        <div class="sort">
+          <label>Ordenar:
+            <select id="sortSelect" aria-label="Ordenar">
+              <option value="recientes">Más recientes</option>
+              <option value="antiguos">Más antiguos</option>
+              <option value="titulo">Título (A–Z)</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <!-- Muro de publicaciones -->
+      <section id="muro" class="muro" aria-label="Muro de publicaciones">
+        <div class="grid-posts">
+          <!-- Tarjetas de noticias (plantilla) -->
+          <article class="post card" data-cat="ia" data-date="2025-08-02" data-id="p1" data-title="Chips de próxima generación impulsan la IA en el borde">
+            <img src="https://picsum.photos/seed/p1/800/480" alt="Chips de próxima generación" loading="lazy" />
+            <h2>Chips de próxima generación impulsan la IA en el borde</h2>
+            <p class="muted">Nuevos aceleradores acercan inferencia de alto rendimiento a dispositivos locales.</p>
+            <div class="meta">IA · <time datetime="2025-08-02">2 ago 2025</time></div>
+            <button class="btn read" data-id="p1">Leer</button>
+          </article>
+
+          <article class="post card" data-cat="hardware" data-date="2025-07-26" data-id="p2" data-title="GPUs con memoria HBM4 llegan al mercado">
+            <img src="https://picsum.photos/seed/p2/800/480" alt="GPUs con HBM4" loading="lazy" />
+            <h2>GPUs con memoria HBM4 llegan al mercado</h2>
+            <p class="muted">Primeros modelos prometen mayor ancho de banda y eficiencia.</p>
+            <div class="meta">Hardware · <time datetime="2025-07-26">26 jul 2025</time></div>
+            <button class="btn read" data-id="p2">Leer</button>
+          </article>
+
+          <article class="post card" data-cat="software" data-date="2025-07-20" data-id="p3" data-title="Nuevo framework web prioriza el streaming de datos">
+            <img src="https://picsum.photos/seed/p3/800/480" alt="Framework web moderno" loading="lazy" />
+            <h2>Nuevo framework web prioriza el streaming de datos</h2>
+            <p class="muted">Mejoras en SSR y caché incremental para experiencias reactivas.</p>
+            <div class="meta">Software · <time datetime="2025-07-20">20 jul 2025</time></div>
+            <button class="btn read" data-id="p3">Leer</button>
+          </article>
+
+          <article class="post card" data-cat="seguridad" data-date="2025-07-18" data-id="p4" data-title="Investigadores alertan sobre ataque a cadenas de suministro">
+            <img src="https://picsum.photos/seed/p4/800/480" alt="Seguridad en la cadena de suministro" loading="lazy" />
+            <h2>Investigadores alertan sobre ataque a cadenas de suministro</h2>
+            <p class="muted">Recomendaciones para proteger dependencias de software.</p>
+            <div class="meta">Seguridad · <time datetime="2025-07-18">18 jul 2025</time></div>
+            <button class="btn read" data-id="p4">Leer</button>
+          </article>
+
+          <article class="post card" data-cat="negocios" data-date="2025-07-10" data-id="p5" data-title="Gran fusión en el sector de semiconductores">
+            <img src="https://picsum.photos/seed/p5/800/480" alt="Fusión tecnológica" loading="lazy" />
+            <h2>Gran fusión en el sector de semiconductores</h2>
+            <p class="muted">Consolidación apunta a liderazgo en centros de datos.</p>
+            <div class="meta">Negocios · <time datetime="2025-07-10">10 jul 2025</time></div>
+            <button class="btn read" data-id="p5">Leer</button>
+          </article>
+        </div>
+        <div class="load-more">
+          <button id="loadMore" class="btn outline">Cargar más</button>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section id="contacto" class="contact card">
+        <header class="section-header">
+          <h2>Contacto</h2>
+          <p class="muted">¿Tienes una nota? Escríbenos.</p>
+        </header>
+        <form id="contactForm" class="form" novalidate>
+          <div class="grid-form">
+            <div>
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" placeholder="Su nombre" required />
+              <small class="help"></small>
+            </div>
+            <div>
+              <label for="email">Correo</label>
+              <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" required />
+              <small class="help"></small>
+            </div>
+          </div>
+          <div>
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="4" placeholder="Escriba su mensaje" required></textarea>
+            <small class="help"></small>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn primary">Enviar</button>
+            <button type="reset" class="btn">Limpiar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <nav aria-label="Enlaces de pie de página">
+          <ul class="footer-menu">
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+        <p>&copy; <span id="year"></span> Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Lector ampliado: dialog -->
+    <dialog id="reader" class="reader">
+      <article class="reader__content card">
+        <header class="reader__head">
+          <h2 id="readerTitle"></h2>
+          <button id="readerClose" class="btn-icon" aria-label="Cerrar">✕</button>
+        </header>
+        <div id="readerBody" class="reader__body"></div>
+        <footer class="reader__foot">
+          <button id="shareBtn" class="btn">Compartir</button>
+          <button id="saveBtn" class="btn outline">Guardar</button>
+        </footer>
+      </article>
+    </dialog>
+
+    <button id="toTop" class="to-top" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>

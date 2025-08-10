@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda — Maqueta eCommerce</title>
+    <meta name="description" content="Maqueta funcional de tienda online con HTML5, CSS3 y JavaScript." />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <a class="brand" href="#" aria-label="Inicio">
+          <span class="brand__logo">🛒</span>
+          <span class="brand__text">Mi Tienda</span>
+        </a>
+
+        <form id="searchForm" class="search" role="search" aria-label="Buscar productos" novalidate>
+          <input id="searchInput" type="search" placeholder="Buscar productos..." aria-label="Buscar" />
+          <button class="btn" type="submit" aria-label="Ejecutar búsqueda">Buscar</button>
+        </form>
+
+        <nav class="site-nav" aria-label="Principal">
+          <ul class="menu">
+            <li><a class="is-active" href="../index-admin.html">Inicio</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <button id="cartToggle" class="btn-icon" aria-label="Abrir carrito">🧺 <span id="cartCount" class="badge">0</span></button>
+        <button id="themeToggle" class="btn-icon" aria-label="Cambiar tema">◑</button>
+        <button class="btn-icon nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button>
+      </div>
+    </header>
+
+    <main class="container layout">
+      <section class="hero card">
+        <h1>Encuentre sus productos favoritos</h1>
+        <p>Catálogo con precios ficticios y carrito de demostración.</p>
+        <a href="#catalogo" class="btn">Ver productos</a>
+      </section>
+
+      <section id="catalogo" class="catalogo">
+        <header class="catalogo__header">
+          <h2>Catálogo</h2>
+          <div class="filters">
+            <label>Ordenar:
+              <select id="sortSelect" aria-label="Ordenar productos">
+                <option value="relevance">Relevancia</option>
+                <option value="price-asc">Precio: menor a mayor</option>
+                <option value="price-desc">Precio: mayor a menor</option>
+              </select>
+            </label>
+          </div>
+        </header>
+
+        <section class="grid-products" aria-label="Listado de productos">
+          <!-- Productos de ejemplo -->
+          <article class="product card" data-price="129.99" data-name="Auriculares Pro">
+            <img src="https://picsum.photos/seed/p1/400/280" alt="Auriculares Pro" loading="lazy" />
+            <h3 class="product__title">Auriculares Pro</h3>
+            <p class="product__price">$129.99</p>
+            <button class="btn add-to-cart" data-id="p1">Agregar</button>
+          </article>
+
+          <article class="product card" data-price="49.90" data-name="Mouse Inalámbrico">
+            <img src="https://picsum.photos/seed/p2/400/280" alt="Mouse Inalámbrico" loading="lazy" />
+            <h3 class="product__title">Mouse Inalámbrico</h3>
+            <p class="product__price">$49.90</p>
+            <button class="btn add-to-cart" data-id="p2">Agregar</button>
+          </article>
+
+          <article class="product card" data-price="899.00" data-name="Laptop 14”">
+            <img src="https://picsum.photos/seed/p3/400/280" alt="Laptop 14 pulgadas" loading="lazy" />
+            <h3 class="product__title">Laptop 14”</h3>
+            <p class="product__price">$899.00</p>
+            <button class="btn add-to-cart" data-id="p3">Agregar</button>
+          </article>
+
+          <article class="product card" data-price="19.50" data-name="Cable USB-C">
+            <img src="https://picsum.photos/seed/p4/400/280" alt="Cable USB-C" loading="lazy" />
+            <h3 class="product__title">Cable USB-C</h3>
+            <p class="product__price">$19.50</p>
+            <button class="btn add-to-cart" data-id="p4">Agregar</button>
+          </article>
+
+          <article class="product card" data-price="299.00" data-name="Smartwatch X">
+            <img src="https://picsum.photos/seed/p5/400/280" alt="Smartwatch X" loading="lazy" />
+            <h3 class="product__title">Smartwatch X</h3>
+            <p class="product__price">$299.00</p>
+            <button class="btn add-to-cart" data-id="p5">Agregar</button>
+          </article>
+
+          <article class="product card" data-price="59.00" data-name="Teclado Mecánico">
+            <img src="https://picsum.photos/seed/p6/400/280" alt="Teclado Mecánico" loading="lazy" />
+            <h3 class="product__title">Teclado Mecánico</h3>
+            <p class="product__price">$59.00</p>
+            <button class="btn add-to-cart" data-id="p6">Agregar</button>
+          </article>
+        </section>
+      </section>
+
+      <section id="contacto" class="card contact">
+        <h2>Contacto</h2>
+        <p>Para dudas, escriba a <a class="link" href="mailto:ventas@mi-tienda.com">ventas@mi-tienda.com</a>.</p>
+      </section>
+    </main>
+
+    <aside id="cartDrawer" class="cart" aria-label="Carrito" aria-hidden="true">
+      <header class="cart__header">
+        <h2>Carrito</h2>
+        <button id="cartClose" class="btn-icon" aria-label="Cerrar carrito">✕</button>
+      </header>
+      <section id="cartItems" class="cart__items" aria-live="polite"></section>
+      <footer class="cart__footer">
+        <div class="cart__row">
+          <span>Total</span>
+          <strong id="cartTotal">$0.00</strong>
+        </div>
+        <button id="checkoutBtn" class="btn primary">Comprar</button>
+      </footer>
+    </aside>
+
+    <footer class="site-footer">
+      <div class="container">
+        <nav aria-label="Enlaces de pie de página">
+          <ul class="footer-menu">
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Ayuda</a></li>
+          </ul>
+        </nav>
+        <p>&copy; <span id="year"></span> Mi Tienda. Maqueta de demostración.</p>
+      </div>
+    </footer>
+
+    <button id="toTop" class="to-top" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>

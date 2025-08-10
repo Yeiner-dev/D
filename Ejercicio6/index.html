@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante Sabores — Maqueta</title>
+    <meta name="description" content="Maqueta de sitio web de restaurante con menú del día, contacto y mapa." />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <a class="brand" href="#" aria-label="Inicio">
+          <span class="brand__mark"></span>
+          <span class="brand__text">Sabores</span>
+        </a>
+
+        <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <ul class="menu">
+            <li><a class="is-active" href="../index-admin.html">Inicio</a></li>
+            <li><a href="#menu">Menú</a></li>
+            <li><a href="#reservas">Reservas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button id="themeToggle" class="btn-icon" aria-label="Cambiar tema">◑</button>
+          <button class="btn-icon nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio" class="container layout">
+      <!-- Hero -->
+      <section class="hero card">
+        <div class="hero__copy">
+          <h1>Sabores auténticos, ingredientes frescos</h1>
+          <p>Disfrute platillos de temporada y un ambiente acogedor en el corazón de la ciudad.</p>
+          <div class="cta">
+            <a class="btn primary" href="#menu">Ver menú</a>
+            <a class="btn" href="#reservas">Reservar mesa</a>
+          </div>
+          <ul class="badges">
+            <li class="badge">Abierto hoy</li>
+            <li class="badge">Menú del día</li>
+            <li class="badge">Opciones vegetarianas</li>
+          </ul>
+        </div>
+        <div class="hero__media">
+          <img src="https://picsum.photos/seed/restaurant-hero/1024/640" alt="Plato destacado del restaurante" loading="eager" />
+        </div>
+      </section>
+
+      <!-- Menú del día y carta -->
+      <section id="menu" class="menu-section">
+        <header class="section-header">
+          <h2>Menú</h2>
+          <div class="filters">
+            <button class="chip is-active" data-filter="all">Todo</button>
+            <button class="chip" data-filter="entrada">Entradas</button>
+            <button class="chip" data-filter="principal">Platos fuertes</button>
+            <button class="chip" data-filter="postre">Postres</button>
+            <button class="chip" data-filter="bebida">Bebidas</button>
+          </div>
+        </header>
+
+        <article class="card menu-dia">
+          <h3>Menú del día</h3>
+          <ul class="list">
+            <li><strong>Sopa de tomate rostizado</strong> — con albahaca y crotones</li>
+            <li><strong>Pollo a la plancha</strong> — puré de papa y vegetales salteados</li>
+            <li><strong>Flan casero</strong> — caramelo suave</li>
+            <li><strong>Refresco o limonada</strong></li>
+          </ul>
+          <p class="muted">Disponible de 12:00 a 16:00</p>
+        </article>
+
+        <section class="grid-menu" aria-label="Carta completa">
+          <article class="plato card" data-cat="entrada" data-name="Bruschetta clásica">
+            <img src="https://picsum.photos/seed/ent1/600/420" alt="Bruschetta clásica" loading="lazy" />
+            <div class="plato__meta">
+              <h3>Bruschetta clásica</h3>
+              <p class="muted">Tomate, albahaca y aceite de oliva</p>
+            </div>
+            <div class="plato__foot">
+              <span class="precio">$6.50</span>
+              <button class="btn add" data-id="ent1">Añadir</button>
+            </div>
+          </article>
+
+          <article class="plato card" data-cat="principal" data-name="Lomo en salsa de vino">
+            <img src="https://picsum.photos/seed/pri1/600/420" alt="Lomo en salsa de vino" loading="lazy" />
+            <div class="plato__meta">
+              <h3>Lomo en salsa de vino</h3>
+              <p class="muted">Guarnición de vegetales al grill</p>
+            </div>
+            <div class="plato__foot">
+              <span class="precio">$14.90</span>
+              <button class="btn add" data-id="pri1">Añadir</button>
+            </div>
+          </article>
+
+          <article class="plato card" data-cat="postre" data-name="Cheesecake de frutos rojos">
+            <img src="https://picsum.photos/seed/pos1/600/420" alt="Cheesecake de frutos rojos" loading="lazy" />
+            <div class="plato__meta">
+              <h3>Cheesecake de frutos rojos</h3>
+              <p class="muted">Base de galleta y coulis</p>
+            </div>
+            <div class="plato__foot">
+              <span class="precio">$5.90</span>
+              <button class="btn add" data-id="pos1">Añadir</button>
+            </div>
+          </article>
+
+          <article class="plato card" data-cat="bebida" data-name="Limonada de hierbabuena">
+            <img src="https://picsum.photos/seed/beb1/600/420" alt="Limonada de hierbabuena" loading="lazy" />
+            <div class="plato__meta">
+              <h3>Limonada de hierbabuena</h3>
+              <p class="muted">Refrescante y natural</p>
+            </div>
+            <div class="plato__foot">
+              <span class="precio">$2.50</span>
+              <button class="btn add" data-id="beb1">Añadir</button>
+            </div>
+          </article>
+
+          <article class="plato card" data-cat="principal" data-name="Pasta al pesto">
+            <img src="https://picsum.photos/seed/pri2/600/420" alt="Pasta al pesto" loading="lazy" />
+            <div class="plato__meta">
+              <h3>Pasta al pesto</h3>
+              <p class="muted">Albahaca, parmesano y piñones</p>
+            </div>
+            <div class="plato__foot">
+              <span class="precio">$11.50</span>
+              <button class="btn add" data-id="pri2">Añadir</button>
+            </div>
+          </article>
+
+          <article class="plato card" data-cat="entrada" data-name="Ensalada César">
+            <img src="https://picsum.photos/seed/ent2/600/420" alt="Ensalada César" loading="lazy" />
+            <div class="plato__meta">
+              <h3>Ensalada César</h3>
+              <p class="muted">Lechuga romana, crutones y parmesano</p>
+            </div>
+            <div class="plato__foot">
+              <span class="precio">$7.20</span>
+              <button class="btn add" data-id="ent2">Añadir</button>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <!-- Reservas -->
+      <section id="reservas" class="reservas card">
+        <header class="section-header">
+          <h2>Reservas</h2>
+          <p class="muted">Complete el formulario y confirmaremos por correo.</p>
+        </header>
+        <form id="resForm" class="form" novalidate>
+          <div class="grid-form">
+            <div>
+              <label for="resNombre">Nombre</label>
+              <input id="resNombre" name="resNombre" type="text" placeholder="Su nombre" required />
+              <small class="help"></small>
+            </div>
+            <div>
+              <label for="resEmail">Correo</label>
+              <input id="resEmail" name="resEmail" type="email" placeholder="correo@ejemplo.com" required />
+              <small class="help"></small>
+            </div>
+          </div>
+          <div class="grid-form">
+            <div>
+              <label for="resFecha">Fecha</label>
+              <input id="resFecha" name="resFecha" type="date" required />
+              <small class="help"></small>
+            </div>
+            <div>
+              <label for="resHora">Hora</label>
+              <input id="resHora" name="resHora" type="time" required />
+              <small class="help"></small>
+            </div>
+            <div>
+              <label for="resPersonas">Personas</label>
+              <input id="resPersonas" name="resPersonas" type="number" min="1" max="12" value="2" required />
+              <small class="help"></small>
+            </div>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn primary">Reservar</button>
+            <button type="reset" class="btn">Limpiar</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Contacto + mapa -->
+      <section id="contacto" class="contact card">
+        <header class="section-header">
+          <h2>Contacto</h2>
+          <p class="muted">Dirección, horarios y ubicación.</p>
+        </header>
+        <div class="contact-grid">
+          <article>
+            <h3>Información</h3>
+            <ul class="list">
+              <li><strong>Teléfono:</strong> <a class="link" href="tel:+50255555555">+502 5555 5555</a></li>
+              <li><strong>Correo:</strong> <a class="link" href="mailto:reservas@sabores.com">reservas@sabores.com</a></li>
+              <li><strong>Dirección:</strong> 4a Av. 12-34, Zona 10, Ciudad de Guatemala</li>
+            </ul>
+            <h4>Horarios</h4>
+            <ul class="list">
+              <li>Lun–Jue: 12:00–22:00</li>
+              <li>Vie–Sáb: 12:00–23:30</li>
+              <li>Dom: 12:00–20:00</li>
+            </ul>
+          </article>
+          <aside>
+            <div class="map-wrap">
+              <!-- Mapa incrustado (OpenStreetMap) -->
+              <iframe
+                title="Ubicación del restaurante"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-90.551%2C14.55%2C-90.49%2C14.63&layer=mapnik&marker=14.61%2C-90.52"
+                style="border:1px solid var(--border)"
+              ></iframe>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <nav aria-label="Enlaces de pie de página">
+          <ul class="footer-menu">
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+        <p>&copy; <span id="year"></span> Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Drawer de selección (ficticio) -->
+    <aside id="pedidoDrawer" class="pedido" aria-label="Pedido rápido" aria-hidden="true">
+      <header class="pedido__header">
+        <h2>Selecciones</h2>
+        <button id="pedidoClose" class="btn-icon" aria-label="Cerrar">✕</button>
+      </header>
+      <section id="pedidoItems" class="pedido__items"></section>
+      <footer class="pedido__footer">
+        <button id="pedidoConfirm" class="btn primary">Confirmar pedido</button>
+      </footer>
+    </aside>
+
+    <button id="toTop" class="to-top" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>

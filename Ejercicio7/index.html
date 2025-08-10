@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agencia Nova — Marketing Digital</title>
+    <meta name="description" content="Agencia de marketing digital: servicios, clientes y formulario de cotización." />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <a class="brand" href="#" aria-label="Inicio">
+          <span class="brand__mark"></span>
+          <span class="brand__text">Agencia Nova</span>
+        </a>
+
+        <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <ul class="menu">
+            <li><a class="is-active" href="../index-admin.html">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#clientes">Clientes</a></li>
+            <li><a href="#cotizacion">Cotización</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button id="themeToggle" class="btn-icon" aria-label="Cambiar tema">◑</button>
+          <button class="btn-icon nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio" class="container layout">
+      <!-- Hero -->
+      <section class="hero card">
+        <div class="hero__copy">
+          <h1>Hacemos crecer su marca</h1>
+          <p>Campañas creativas y medibles en redes, buscadores y contenidos.</p>
+          <div class="cta">
+            <a class="btn primary" href="#cotizacion">Solicitar cotización</a>
+            <a class="btn" href="#servicios">Ver servicios</a>
+          </div>
+          <ul class="stats">
+            <li><strong>120+</strong> campañas</li>
+            <li><strong>50</strong> marcas atendidas</li>
+            <li><strong>8</strong> años de experiencia</li>
+          </ul>
+        </div>
+        <div class="hero__media">
+          <img src="https://picsum.photos/seed/agency-hero/960/640" alt="Creatividad y análisis para marcas" loading="eager" />
+        </div>
+      </section>
+
+      <!-- Servicios destacados -->
+      <section id="servicios" class="servicios">
+        <header class="section-header">
+          <h2>Servicios</h2>
+          <p class="muted">Soluciones integrales de marketing digital.</p>
+        </header>
+        <div class="grid-services">
+          <article class="card service">
+            <h3>Gestión de redes</h3>
+            <p>Calendario, creatividad y pauta para crecimiento sostenido.</p>
+            <ul class="list">
+              <li>Plan editorial</li>
+              <li>Community management</li>
+              <li>Social Ads</li>
+            </ul>
+          </article>
+          <article class="card service">
+            <h3>SEO & Contenidos</h3>
+            <p>Auditoría técnica, estrategia y contenido que posiciona.</p>
+            <ul class="list">
+              <li>SEO on/off page</li>
+              <li>Blog & recursos</li>
+              <li>Link building</li>
+            </ul>
+          </article>
+          <article class="card service">
+            <h3>Paid Media</h3>
+            <p>Campañas en Google, Meta y más con optimización continua.</p>
+            <ul class="list">
+              <li>Google Ads</li>
+              <li>Meta Ads</li>
+              <li>Remarketing</li>
+            </ul>
+          </article>
+          <article class="card service">
+            <h3>Brand & Web</h3>
+            <p>Identidad visual y sitios web centrados en conversión.</p>
+            <ul class="list">
+              <li>Naming & branding</li>
+              <li>UX/UI</li>
+              <li>Web corporativa</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Clientes anteriores (slider logos) -->
+      <section id="clientes" class="clientes card">
+        <header class="section-header">
+          <h2>Clientes</h2>
+          <p class="muted">Algunas marcas que confiaron en nosotros.</p>
+        </header>
+        <div class="logos-slider" aria-roledescription="carousel" aria-label="Clientes">
+          <div class="track">
+            <!-- 10 logos de ejemplo (imágenes genéricas) -->
+            <img src="https://picsum.photos/seed/logo1/180/80" alt="Cliente 1" />
+            <img src="https://picsum.photos/seed/logo2/180/80" alt="Cliente 2" />
+            <img src="https://picsum.photos/seed/logo3/180/80" alt="Cliente 3" />
+            <img src="https://picsum.photos/seed/logo4/180/80" alt="Cliente 4" />
+            <img src="https://picsum.photos/seed/logo5/180/80" alt="Cliente 5" />
+            <img src="https://picsum.photos/seed/logo6/180/80" alt="Cliente 6" />
+            <img src="https://picsum.photos/seed/logo7/180/80" alt="Cliente 7" />
+            <img src="https://picsum.photos/seed/logo8/180/80" alt="Cliente 8" />
+            <img src="https://picsum.photos/seed/logo9/180/80" alt="Cliente 9" />
+            <img src="https://picsum.photos/seed/logo10/180/80" alt="Cliente 10" />
+          </div>
+          <div class="logos-controls">
+            <button class="btn-icon" data-dir="prev" aria-label="Anterior">←</button>
+            <button class="btn-icon" data-dir="next" aria-label="Siguiente">→</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formulario de cotización -->
+      <section id="cotizacion" class="cotizacion card">
+        <header class="section-header">
+          <h2>Solicitar cotización</h2>
+          <p class="muted">Cuéntenos su necesidad y le responderemos pronto.</p>
+        </header>
+        <form id="quoteForm" class="form" novalidate>
+          <div class="grid-form">
+            <div>
+              <label for="qNombre">Nombre</label>
+              <input id="qNombre" name="qNombre" type="text" placeholder="Su nombre" required />
+              <small class="help"></small>
+            </div>
+            <div>
+              <label for="qEmail">Correo</label>
+              <input id="qEmail" name="qEmail" type="email" placeholder="correo@ejemplo.com" required />
+              <small class="help"></small>
+            </div>
+          </div>
+
+          <div class="grid-form">
+            <div>
+              <label for="qServicio">Servicio</label>
+              <select id="qServicio" name="qServicio" required>
+                <option value="">Seleccione…</option>
+                <option value="redes">Gestión de redes</option>
+                <option value="seo">SEO & contenidos</option>
+                <option value="paid">Paid Media</option>
+                <option value="brandweb">Brand & Web</option>
+              </select>
+              <small class="help"></small>
+            </div>
+            <div>
+              <label for="qPresupuesto">Presupuesto estimado (USD)</label>
+              <input id="qPresupuesto" name="qPresupuesto" type="number" min="100" step="50" placeholder="500" required />
+              <small class="help"></small>
+            </div>
+          </div>
+
+          <div>
+            <label for="qMensaje">Detalles</label>
+            <textarea id="qMensaje" name="qMensaje" rows="4" placeholder="Describa su proyecto (objetivos, plazos, etc.)" required></textarea>
+            <small class="help"></small>
+          </div>
+
+          <div class="estimator card">
+            <div class="estimator-row">
+              <span>Estimación rápida:</span>
+              <strong id="qEstimado">$0</strong>
+            </div>
+            <small class="muted">Cálculo orientativo según servicio y presupuesto.</small>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn primary">Enviar</button>
+            <button type="reset" class="btn">Limpiar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <nav aria-label="Enlaces de pie de página">
+          <ul class="footer-menu">
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+        <p>&copy; <span id="year"></span> Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <button id="toTop" class="to-top" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>
